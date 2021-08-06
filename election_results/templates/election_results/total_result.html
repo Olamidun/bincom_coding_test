@@ -1,15 +1,14 @@
 
 <form method="POST">
+    {% csrf_token %}
     <div>
-        {% for lga in lgas %}
-            <div><li>LGAs {{lga.lga_name}} </li></div> 
-            <!-- {% for polling_unit in polling_units %}
-                {% if polling_unit.polling_unit_name %}
-                    <li>{{polling_unit.polling_unit_name}}</li>
-                {% else %}
-                    <li>polling_unit {{polling_unit.uniqueid}}</li>
-                {% endif %}
-            {% endfor %} -->
-        {% endfor %}
+        <label for="delta"> Choose a local government:</label>
+        <select name="lga" id="delta">
+            {% for lga in lgas %}
+            
+                <option value="{{lga.lga_id}}">{{forloop.counter}} {{lga.lga_name}}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Get result</submit>
     </div>
 </form>

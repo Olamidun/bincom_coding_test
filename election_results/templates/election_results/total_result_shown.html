@@ -1,0 +1,16 @@
+<div>
+    <!-- {% for polling_unit in polling_units %}
+        {% if polling_unit.polling_unit_name %}
+            <li>{{polling_unit.polling_unit_name}} ({{polling_unit.uniqueid}})</li>
+        {% else %}
+            <li>polling_unit {{polling_unit.uniqueid}}</li>
+        {% endif %}
+            {% for result in polling_unit_results %}
+                <li>{{result.party_abbreviation}} {{result.party_score}}</li>
+            {% endfor%}
+    {% endfor %} -->
+
+    {% for result in polling_unit_results %}
+        <li>{{result.party_abbreviation}} {{result.party_score}}</li>
+    {% endfor %}
+</div>
